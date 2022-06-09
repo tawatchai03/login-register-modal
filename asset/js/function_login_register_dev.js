@@ -1,9 +1,9 @@
 	//function parameter
 	// TODO: CDN
 	window.cmBaseApiUrl = 'https://api-gw-py-prod.lavagaming.com'
-	    //window.spinixBaseApiUrl = 'https://backend.spinix.com'
-	    //window.spinixLobbyUrl = 'https://www.spinix.com'
-	    //window.spinixLobbyTestUrl = 'https://test.spinix.com'
+	    window.spinixBaseApiUrl = 'https://backend.spinix.com'
+	    window.spinixLobbyUrl = 'https://www.spinix.com'
+	    window.spinixLobbyTestUrl = 'https://test.spinix.com'
 	console.log('function login v.1.0.0 build 09-06-2022')
 
 	var getUrlParameter = function getUrlParameter(sParam) {
