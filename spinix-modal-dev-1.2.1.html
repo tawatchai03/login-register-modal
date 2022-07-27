@@ -1,0 +1,1732 @@
+<style>
+     :root {
+        /* Global variables Setting */
+        --exp-white-color: #fff;
+        --exp-color-gray: #858585;
+        --exp-light-black-color: #9f9f9f;
+        --exp-primary-color: #ff9a4d;
+        --exp-second-color: #db5f00;
+        --exp-button-color: #ffae00;
+        --exp-text-color: #232323;
+        --exp-modal-bg-color: #fff;
+        --exp-input-color: #000000;
+        --exp-input-bg-color: #e5e5e5;
+    }
+</style>
+<style>
+    #exp_login_modal {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 0px;
+        font-size: 16px;
+        float: right;
+        width: 100%;
+    }
+    
+    .modal-content {
+        background-color: var(--exp-modal-bg-color);
+        color: var(--exp-text-color);
+        border-radius: 20px;
+    }
+    
+    .modal-body {
+        padding: 0px;
+    }
+    
+    #exp-notification-modal___BV_modal_content_ {
+        background-color: var(--exp-modal-bg-color);
+        border: 0;
+    }
+    
+    #exp-notification-modal___BV_modal_body_ {
+        padding: 0rem;
+    }
+    
+    .notification-header {
+        border-radius: 20px 20px 0 0;
+        background: linear-gradient(90deg, var(--exp-primary-color) 0%, var(--exp-second-color) 100%) !important;
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--exp-white-color);
+    }
+    
+    .notification-message {
+        font-size: 16px;
+        color: var(--exp-text-color);
+    }
+    
+    .modal-title {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    /* nav tabs */
+    
+    .tabs {
+        border-radius: 20px;
+    }
+    
+    .nav-tabs {
+        border: none !important;
+        margin-left: auto !important;
+    }
+    
+    .nav-tabs .nav-link {
+        margin-bottom: 0px !important;
+    }
+    
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-item.show .nav-link {
+        background: linear-gradient(90deg, var(--exp-primary-color) 0%, var(--exp-second-color) 100%) !important;
+        color: var(--exp-white-color);
+        outline: none;
+    }
+    
+    .nav-link {
+        border: none !important;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background: var(--exp-input-bg-color);
+    color: var(--exp-light-black-color); */
+    }
+    
+    .nav-tabs .nav-item.show .nav-link {
+        background: none !important;
+        border: none !important;
+        outline: none;
+    }
+    
+    li:nth-child(1) .nav-link {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border: none;
+    }
+    
+    li:nth-child(2) .nav-link {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 20px;
+        border: none;
+    }
+    
+    li {
+        width: 100%;
+    }
+    
+    .tab-content {
+        padding: 0 20px 20px;
+        color: var(--exp-text-color);
+    }
+    /*  */
+    
+    a {
+        color: var(--exp-text-color);
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    a:hover {
+        color: var(--exp-light-black-color);
+    }
+    /*  */
+    
+    .forgotPassword-title {
+        border-radius: 20px 20px 0 0;
+        background: linear-gradient(90deg, var(--exp-primary-color) 0%, var(--exp-second-color) 100%) !important;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
+    label {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    #input-PIN {
+        position: relative;
+    }
+    
+    #login-modal .form-group>div {
+        position: relative;
+    }
+    
+    input {
+        font-size: 14px;
+        font-weight: 400;
+        border: 0px solid none;
+    }
+    
+    textarea:focus,
+    input:focus {
+        outline: none;
+    }
+    
+    p {
+        margin-bottom: 0;
+    }
+    
+    .form-control,
+    .form-control:hover,
+    .form-control:focus,
+    .form-control:disabled {
+        background-color: var(--exp-input-bg-color) !important;
+        border-radius: 10px !important;
+        color: var(--exp-text-color) !important;
+        border: 1px solid var(--exp-input-bg-color) !important;
+        height: 47px;
+        border: 0px solid none !important;
+    }
+    
+    .form-group {
+        position: relative;
+        border: 0px solid none;
+    }
+    
+    .btn {
+        background: var(--exp-button-color);
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10px;
+        border: 0px;
+    }
+    
+    .btn-login {
+        background: #000000;
+        box-shadow: 0px 4px 4px rgba(var(--exp-black-color), 0.25);
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10px;
+        border: 0px;
+    }
+    
+    .btn-login-modal {
+        color: white;
+        background: linear-gradient(90deg, var(--exp-primary-color) 0%, var(--exp-second-color) 100%) !important;
+    }
+    
+    .btn:hover,
+    .btn:focus {
+        background: var(--exp-button-color);
+        box-shadow: 0px 4px 4px rgba(var(--exp-black-color), 0.25);
+        border: 0px;
+    }
+    
+    .btn:disabled {
+        opacity: 0.65;
+    }
+    
+    .btn-back {
+        background: linear-gradient(270deg, #666666 1.05%, #2d2d2d 100%);
+    }
+    
+    .btn-back:hover {
+        background: linear-gradient(270deg, #666666 1.05%, #2d2d2d 100%);
+        opacity: 0.8;
+    }
+    
+    .btn-block {
+        margin-top: 0;
+    }
+    
+    .btn-fb,
+    .btn-fb:hover {
+        background: var(--exp-button-color);
+        padding: 0;
+    }
+    
+    .btn-line,
+    .btn-line:hover {
+        background: var(--exp-button-color);
+        padding: 0;
+    }
+    
+    .btn-copy {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        height: 39px;
+        padding: 0 7px;
+    }
+    
+    .btn-otp {
+        background: linear-gradient(90deg, var(--exp-primary-color) 0%, var(--exp-second-color) 100%) !important;
+    }
+    
+    .btn-back {
+        background: #FFFFFF !important;
+        border: 1px solid var(--exp-button-color) !important;
+        color: #000;
+    }
+    
+    .btn-back:hover {
+        background: #FFFFFF !important;
+        border: 1px solid var(--exp-button-color) !important;
+        color: #000;
+    }
+    
+    .custom-control-label::before {
+        top: 0rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-color: var(--exp-primary-color);
+    }
+    
+    .custom-checkbox .custom-control-label::before {
+        border-radius: 50%;
+    }
+    
+    .custom-control-input:checked~.custom-control-label::before {
+        background-color: var(--exp-primary-color);
+        border-color: var(--exp-primary-color);
+    }
+    
+    .custom-control-label::after {
+        top: 0rem;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    
+    .vp-checkbox .custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+        background-image: url("https://i.imgur.com/E88bdWr.png");
+    }
+    
+    .vp-checkbox .custom-checkbox>label {
+        margin-left: 10px;
+    }
+    
+    .custom-select {
+        position: relative;
+        background-color: var(--exp-input-bg-color) !important;
+        /* background-image: url("https://i.imgur.com/IUBN9zd.png"); */
+        background-repeat: no-repeat;
+        background-size: initial;
+        border-radius: 10px !important;
+        color: var(--exp-text-color) !important;
+        border: 1px solid var(--exp-input-bg-color) !important;
+        height: 47px;
+    }
+    /* .title-color {
+    color: var(--exp-primary-color);
+  } */
+    
+    .titile-content {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .vector {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        cursor: pointer;
+        transform: translateY(-50%);
+    }
+    
+    .footer>p {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .rememberMe>span {
+        cursor: pointer;
+    }
+    
+    .none {
+        display: none;
+    }
+    
+    .forgottext {
+        cursor: pointer;
+    }
+    
+    .box-Successful {
+        min-height: 121px;
+        /* background: var(--exp-input-bg-color); */
+        -webkit-box-shadow: 0px 0px 23px 3px rgba(0, 0, 0, 0.64);
+        -moz-box-shadow: 0px 0px 23px 3px rgba(0, 0, 0, 0.64);
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.64);
+        border-radius: 10px;
+        padding: 20px 40px;
+    }
+    
+    .pincode-input-text {
+        margin-right: 10px;
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50% !important;
+        text-align: center !important;
+        font-size: 28px !important;
+        font-weight: 500 !important;
+        border: 1px solid var(--exp-text-color) !important;
+    }
+    
+    .language {
+        position: relative;
+    }
+    
+    .btn-language {
+        width: 180px;
+    }
+    
+    .Select-Lang {
+        display: none;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        color: var(--exp-white-color);
+        min-width: 170px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .th,
+    .en {
+        width: 100%;
+        padding: 10px 20px;
+        background: var(--exp-primary-color);
+        opacity: 0.95;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .th {
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .en {
+        border-radius: 0 0 10px 10px;
+    }
+    
+    .th:hover,
+    .en:hover {
+        background: var(--exp-primary-color);
+        opacity: 1;
+    }
+    
+    .btn-on-page {
+        width: 130px;
+        border: 1px solid var(--exp-primary-color);
+    }
+    /* login register page */
+    
+    @media only screen and (max-width: 768px) {
+        .login-register-page {
+            display: flex;
+            width: 100%;
+        }
+        .login-register-page .btn-on-page {
+            width: 100%;
+            border-radius: 0px 0px 0px 0px;
+        }
+    }
+    /* /login register page */
+    
+    #login-modal a.nav-link {
+        color: var(--exp-white-color) !important;
+        background: var(--exp-color-gray);
+    }
+    /* exp-step */
+    
+    .exp-step {
+        position: relative;
+        max-width: 280px;
+        margin: 0 auto;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    
+    .steps {
+        z-index: 2;
+    }
+    
+    .steps-number {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        color: #fff;
+        background: #c4c4c4;
+    }
+    
+    .is-active {
+        background: var(--exp-second-color);
+        border: 1px solid var(--exp-second-color) !important;
+    }
+    
+    .border-step {
+        position: absolute;
+        top: 73%;
+        left: 50%;
+        z-index: 1;
+        width: 100%;
+        min-width: 100px;
+        max-width: 190px;
+        height: 0px;
+        transform: translate(-50%, -50%);
+        border: 1px solid #c4c4c4;
+    }
+    /* exp-group-form */
+    
+    .exp-group-form {
+        /* min-height: 450px; */
+    }
+    
+    .exp-select {
+        width: 100px;
+    }
+    
+    @media (max-width: 480px) {
+        .exp-info {
+            flex-wrap: wrap;
+        }
+        .exp-info-fname,
+        .exp-info-lname {
+            width: 100% !important;
+        }
+    }
+    
+    .text-TermsCondition {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    /* modal TermsCondition */
+    
+    .modal-TermsCondition {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        background: rgb(0, 0, 0, 0.8);
+        border-radius: 10px;
+    }
+    
+    .modal-TermsCondition .condition-desc {
+        font-weight: 300;
+    }
+    
+    .card-TermsCondition {
+        position: relative;
+        width: 400px;
+        min-height: 317px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+    
+    .btn-close-TermsCondition {
+        font-size: 25px;
+        position: absolute;
+        top: 1%;
+        right: 0%;
+        width: 8%;
+        height: 8%;
+        cursor: pointer;
+        /* background-color: #000; */
+        /* background-image: url('https://ibb.co/tp6NzT0');
+    background-size:cover;
+    background-repeat: no-repeat; */
+    }
+    
+    .exp-invalid-feedback-icon {
+        padding-right: calc(1.5em + .75rem);
+        border: 1px solid #EF4444 !important;
+    }
+    
+    .exp-valid-feedback-icon {
+        padding-right: calc(1.5em + .75rem);
+        border: 1px solid #10B981 !important;
+        background-image: url(https://ibb.co/zs1GtVH);
+        background-repeat: no-repeat;
+        background-position: right calc(.375em + .1875rem) center;
+        background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    }
+    
+    .exp-register-promotion-card {
+        background-color: var(--exp-input-bg-color);
+        border-radius: 10px;
+        border: none;
+    }
+</style>
+
+<div id="exp_login_modal">
+    <!-- notification -->
+    <b-modal id="exp-notification-modal" hide-footer hide-header centered class="exp-notification">
+        <div>
+            <div class="notification-header w-100 px-2 py-3 footer d-flex justify-content-center align-items-center">
+                แจ้งเตือน
+            </div>
+            <div class="notification-body px-2 py-5 pb-3 w-100 footer flex-column d-flex justify-content-center align-items-center">
+                <i class="far" :class="isSuccess ? 'fa-check-circle text-success' : 'fa-times-circle  text-danger' " style="font-size: 85px;"></i>
+                <div class="notification-message" :class="!alertDialog.autoClose ? 'my-3' : 'mt-3 mb-4'">{{ alertDialog.text }}
+                </div>
+                <b-button v-if="!alertDialog.autoClose" pill class="mt-3 px-5" @click="hideModal('exp-notification-modal')">ตกลง
+                </b-button>
+            </div>
+        </div>
+    </b-modal>
+    <!-- End notification -->
+
+    <!-- modal -->
+    <!-- no-close-on-backdrop -->
+    <b-modal id="login-modal" hide-footer hide-header centered :no-close-on-backdrop="spin">
+        <b-tabs content-class="mt-3" v-if="!forgotmodal">
+            <b-tab title="เข้าสู่ระบบ" :active="tabIndex===1" class="color-link">
+                <b-form @submit.stop.prevent="onSubmit">
+                    <b-form-group label="เบอร์โทรศัพท์/ยูสเซอร์เข้าเกม" label-for="input-tel">
+                        <b-form-input id="input-tel" v-model="formLogin.username" type="text" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/, '')" placeholder="กรอกเบอร์โทรศัพท์/ยูสเซอร์เข้าเกม" maxlength="20"></b-form-input>
+                    </b-form-group>
+                    <div class="my-2"></div>
+                    <b-form-group label="พิน/รหัสผ่านเข้าเกม" label-for="input-PIN">
+                        <b-form-input id="input-PIN" v-model="formLogin.password" :type="showPassword ? 'text' : 'password'" placeholder="กรอกพิน/รหัสผ่านเข้าเกม">
+                        </b-form-input>
+                        <img width="20px" :src="showPassword ? vectoropen : vector" alt="" class="vector" @click="showPassword = !showPassword" />
+                        <b-form-invalid-feedback :state="validation">
+                            {{ alertDialog.text }}
+                        </b-form-invalid-feedback>
+                        <b-form-valid-feedback :state="validation">เข้าสู่ระบบสำเร็จ</b-form-valid-feedback>
+                    </b-form-group>
+                    <div class="w-100 mt-3 footer d-flex justify-content-between align-items-center mb-3">
+                        <p class="rememberMe">
+                            <b-form-radio name="some-radios" value="A" class="none">จดจำฉัน</b-form-radio>
+                        </p>
+                        <!-- <p class="forgottext" @click="forgotmodal = !forgotmodal">
+              ลืมรหัสผ่าน?
+            </p> -->
+                    </div>
+                    <b-button type="submit" :disabled="!enableLogin" pill block class="w-100">{{ spin ? 'กำลังเข้าสู่ระบบ...' : 'เข้าสู่ระบบ' }}</b-button>
+                </b-form>
+                <div class="none">
+                    <div class="w-100 d-flex justify-content-center align-items-center my-3 or">
+                        หรือ
+                    </div>
+                    <b-button pill block class="btn-fb d-flex justify-content-center align-items-center">
+                        <div class="social-fb">
+                            <img :src="fb" alt="" width="40" height="40" />
+                        </div>
+                        <div>เข้าสู่ระบบด้วยเฟซบุ๊ก</div>
+                    </b-button>
+                    <b-button pill block class="btn-line d-flex justify-content-center align-items-center">
+                        <div class="social-line">
+                            <img :src="line" alt="" width="40" height="40" />
+                        </div>
+                        <div>เข้าสู่ระบบด้วยไลน์</div>
+                    </b-button>
+                </div>
+                <!-- language -->
+                <div class="language w-100 text-center mt-4 none">
+                    <b-button pill class="btn-language mt-0 px-4" @click="onClickLang">
+                        <img :src="loglang" alt="" />
+                        <span class="mx-2">{{ lang }}</span>
+                        <img :src="arrow" alt="" />
+                    </b-button>
+                    <div class="Select-Lang flex-column text-left">
+                        <div class="th" @click="onSelectLang('ภาษาไทย')">
+                            <img :src="th" alt="" width="20" height="20" />
+                            <span class="ml-2">ภาษาไทย</span>
+                        </div>
+                        <div class="en" @click="onSelectLang('English')">
+                            <img :src="en" alt="" width="20" height="20" />
+                            <span class="ml-2">English</span>
+                        </div>
+                    </div>
+                </div>
+            </b-tab>
+            <!--
+		register
+-->
+            <!-- forgot Password -->
+            <!--  <b-modal id="forgotPassword-modal" hide-footer title="ลืมรหัสผ่าน ?" centered no-close-on-backdrop> -->
+            <div v-if="forgotmodal" class="forgotPassword pb-4">
+                <div class="forgotPassword-title mb-3 py-2 text-center">
+                    ลืมรหัสผ่าน ?
+                </div>
+                <div v-if="step !== 3" class="mx-4">
+                    <div class="exp-group-form-signIn">
+                        <!-- เบอร์โทร -->
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="w-80">
+                                <b-form-group id="input-tel" label="เบอร์โทรศัพท์" label-for="input-1">
+                                    <b-form-input id="input-tel" oninput="this.value = this.value.replace(/^[1-9]/, '').replace(/^(\d[1234570])/, '').replace(/[^0-9]/g, '');" maxlength="10" placeholder="0xx-xxx-xxxx" pattern=".{10,10}" v-model="forgotPasswordForm.phoneNumber" trim> </b-form-input>
+                                </b-form-group>
+                            </div>
+                            <div class="px-2"></div>
+                            <b-button :disabled="forgotPasswordSpin || !forgotSendotp" pill block class="w-50 mt-3 btn-otp" @click="onSendOTP">
+                                <i v-if="forgotPasswordSpin" aria-hidden="true" class="fa fa-spinner fa-1x fa-fw fa-spin"></i>
+                                <span v-else>{{ !forgotnewOtpTel ? 'กดรับ OTP' : 'ขอ OTP ใหม่' }}</span>
+                            </b-button>
+                        </div>
+                        <!-- OTP -->
+                        <div v-if="forgotnewOtpTel" class="mt-3">
+                            <label for="OTP">OTP</label>
+                            <label for="OTP" style="color: #EF4444;" v-if="forgotShowOtpTime">
+                <span v-if="countDownText!=''">หมดอายุภายใน {{ countDownText }} นาที</span>
+                <span v-else class="" @click="onSendOTP"><u>(ขอ OTP อีกครั้ง)</u></span>
+              </label>
+                            <b-form-group id="input-OTP">
+                                <b-form-input id="input-OTP" v-model="forgotPasswordForm.otp" placeholder="กรอก OTP ที่ได้รับ" oninput="this.value = this.value.replace(/[^0-9]/,'')" maxlength="6" pattern=".{6,6}" trim :class="{ 'exp-invalid-feedback-icon': CheckOtpTelforgot == false, 'exp-valid-feedback-icon': CheckOtpTelforgot == true }">
+                                </b-form-input>
+                            </b-form-group>
+                            <div v-if="CheckOtpTelforgot === false" style="color: #EF4444;"> OTP ไม่ถูกต้อง</div>
+                            <div v-if="CheckOtpTelforgot === true" style="color: #10B981;"> OTP ถูกต้อง</div>
+                        </div>
+                        <!-- PIN -->
+                        <div v-if="forgotOtpState" class="mt-3 mb-3">
+                            <div class="titile-content d-flex justify-content-center align-items-center">
+                                <span>รหัสพินเข้าสู่ระบบ</span> <span>(ตัวเลข 4 หลัก)</span>
+                            </div>
+                            <div class="pincode-input my-2 d-flex justify-content-center align-items-center">
+                                <input type="tel" class="pincode-input-text fkey1" v-on:keyup="keymonitor('fkey1', 'fkey1', 'fkey2')" oninput="this.value = this.value.replace(/[^0-9]/, '')" maxlength="1" />
+                                <input type="tel" class="pincode-input-text fkey2 ml-2" v-on:keyup="keymonitor('fkey1', 'fkey2', 'fkey3')" oninput="this.value = this.value.replace(/[^0-9]/, '')" maxlength="1" />
+                                <input type="tel" class="pincode-input-text fkey3 ml-2 mr-2" v-on:keyup="keymonitor('fkey2', 'fkey3', 'fkey4')" oninput="this.value = this.value.replace(/[^0-9]/, '')" maxlength="1" />
+                                <input type="tel" v-on:keyup="keymonitor('fkey3', 'fkey4', 'submit-change-pincode')" class="pincode-input-text fkey4" oninput="this.value = this.value.replace(/[^0-9]/, '')" maxlength="1" />
+                            </div>
+                        </div>
+                        <div v-if="forgotPasswordForm.pincode.length >= 3" class="d-flex justify-content-between align-items-center mt-4">
+                            <div class="w-50">
+                                <b-button pill block class="mr-2 btn-back w-100" @click="forgotmodal = !forgotmodal">
+                                    ยกเลิก</b-button>
+                            </div>
+                            <div class="mx-2"></div>
+                            <div class="w-50">
+                                <b-overlay :show="spin" rounded opacity="0.6" spinner-small spinner-variant="primary" class="d-block w-100" @hidden="onHidden">
+                                    <b-button :disabled="forgotPasswordForm.pincode.length !== 4" ref="button" pill block class="submit-change-pincode mt-0 w-100" @click="onChangeNewPincode" v-b-modal.Login>ยืนยัน PIN
+                                    </b-button>
+                                </b-overlay>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- modal TermsCondition -->
+            <div class="modal-TermsCondition">
+                <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                    <div class="card-TermsCondition px-5 py-4">
+                        <div class="btn-close-TermsCondition" @click="onModalTermsConditionHiden">x</div>
+                        <div class="titile-content mb-2 d-flex justify-content-center align-items-center">
+                            เงื่อนไขและข้อตกลงในการสมัคร
+                        </div>
+                        <div class="condition-desc">
+                            <p class="mb-2">
+                                1) หมายเลขโทรศัพท์ที่ใช้ ต้องสามารถรับข้อความได้ เพราะระบบจำเป็นต้องส่งรหัส ยืนยันไปหมายเลข โทรศัพท์ของท่าน มิเช่นนั้นจะไม่สามารถทำรายการ ต่าง ๆ ได้
+                            </p>
+                            <p class="mb-2">
+                                2) ชื่อ - นามสกุล ต้องตรงกับข้อมูลบัญชีธนาคาร มิเช่นนั้นจะไม่สามารถถอนเงินได้
+                            </p>
+                            <p class="mb-2">
+                                3) ต้องใช้บัญชีธนาคารที่สมัครฝากเงินเข้ามาเท่านั้น</p>
+                            <p class="mb-2">
+                                4) ถ้าเกิดข้อผิดพลาดของระบบ ให้ทำการ แจ้งพนักงาน ทันทีกรณีที่ไม่แจ้ง ทางเราขอสงวนสิทธิ์การถอนทุก กรณี
+                            </p>
+                            <p>
+                                5) สมาชิก 1 คน ต่อ 1 ไอดีเท่านั้น กรณีตรวจพบว่า มีการสมัครหลายไอดี ทางเราขอสงวนสิทธิ์การถอน ทุกกรณี
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END modal TermsCondition -->
+    </b-modal>
+    <!-- End  -->
+
+</div>
+
+<!-- script Shortcode -->
+<script language="javascript">
+    var intervalCountDown = null;
+    new Vue({
+        el: "#exp_login_modal",
+        data: {
+            tabIndex: 1, // 1=login, 2=register
+            showPassword: false,
+            forgotmodal: false,
+            signInStep: 1,
+            lang: "ภาษาไทย",
+            fb: "https://i.imgur.com/44c9cfq.png",
+            vector: "https://i.imgur.com/JIEu4oD.png",
+            vectoropen: "https://i.imgur.com/gRFL6Il.png",
+            line: "https://i.imgur.com/cUusI5V.png",
+            loglang: "https://i.imgur.com/8tyuw63.png",
+            arrow: "https://i.imgur.com/uDp0Uzk.png",
+            th: "https://i.imgur.com/m7qw7NT.png",
+            en: "https://i.imgur.com/RIlg4Re.png",
+            acceptTermsCondition: false,
+            newOtpTel: false,
+            forgotnewOtpTel: false,
+            SendotpTel: false,
+            CheckOtpTel: null,
+            CheckOtpTelforgot: null,
+            // forgotSendotpTel: false,
+            StatusSign: false,
+            formLogin: {
+                username: "",
+                password: ""
+            },
+            forgotPasswordForm: {
+                phoneNumber: "",
+                otp: "",
+                pincode: ""
+            },
+            formRegister: {
+                tel: "",
+                type_bank_id: null,
+                bank_account: "",
+                pincode: "",
+                name_title: "",
+                fname: "",
+                lname: "",
+                refer_code: "",
+                otp: "",
+                line_id: "",
+            },
+            CheckformRegister: {
+                type_bank_id: null,
+                bank_account: null,
+                name_title: null,
+                fname: null,
+                lname: null,
+            },
+            bankTypeList: [],
+            isSuccess: false,
+            validation: null,
+            defaultPassword: "Aa1234",
+            alertDialog: {
+                text: '',
+                autoClose: true
+            },
+            spin: false,
+            forgotPasswordSpin: false,
+            countDownText: "",
+            forgotShowOtpTime: "",
+            showOtpTime: false,
+            step: 1,
+            isSuccess: false,
+            countDownOtp: 0,
+            otpTimeSecDefault: 300,
+            brandSetting: null,
+            player_game: {},
+            referCode: "",
+            forgotOtpState: false,
+            pincode: "",
+            acceptPromotion: null,
+            otpVerified: false,
+        },
+        computed: {
+            TelState() {
+                if (this.formRegister.tel.length > 9)
+                    return true
+                return false
+            },
+            forgotTelState() {
+                if (this.forgotPasswordForm.phoneNumber.length > 9)
+                    return true;
+                return false;
+            },
+            OtpState() {
+                if (this.formRegister.otp.length == 6) {
+                    return this.apcceptOtp()
+                        // const checkOTP = 123456
+                        // if (checkOTP == this.formRegister.otp)
+                        // 	return this.CheckOtpTel = true, this.showOtpTime = false;
+                        // return this.CheckOtpTel = false;
+                }
+            },
+            enableLogin() {
+                return (
+                    this.formLogin.username &&
+                    this.formLogin.password &&
+                    this.formLogin.username.length >= 10 &&
+                    this.formLogin.password.length >= 4
+                );
+            },
+            validation() {
+                if (!this.formLoign.username && !this.formLoign.password)
+                    return null;
+                return (
+                    this.formLoign.username.length > 4 &&
+                    this.formLoign.username.length < 13
+                );
+            },
+            settingItem() {
+                return this.brandSetting ? this.brandSetting.setting_items.find(
+                    (v) => v._id === this.brandSetting.setting.setting_items_register
+                ) : {}
+            },
+            brandId() {
+                return window.sitebrandId
+            },
+            lineAt() {
+                return this.brandSetting && this.brandSetting.setting.line_id
+            },
+        },
+        watch: {
+            "forgotPasswordForm.otp" () {
+                if (this.forgotPasswordForm.otp.length == 6) {
+                    this.checkForgotPasswordOtp()
+                }
+            }
+        },
+        created() {
+
+            const urlParams = new URLSearchParams(window.location.search);
+            this.referCode = urlParams.get("refer_code");
+            if (urlParams.get("username"))
+                this.formLogin.username = urlParams.get("username");
+            if (urlParams.get("password"))
+                this.formLogin.password = urlParams.get("password");
+            if (urlParams.get("refer_code"))
+                this.formRegister.refer_code = this.referCode;
+
+            // Get BrandSetting and Bank List
+            this.fetchBrandSetting().then(data => this.brandSetting = data)
+            this.getBankList()
+        },
+        mounted() {
+            //console.log('---> mounted')
+            /* ฟังก์ชันนี้ให้ script bind link สมัครแทนแล้ว
+                 window.registerIds.forEach((v) => {
+                document.getElementById(v).addEventListener("click", (v) => {
+                this.tabIndex = 2
+                this.$bvModal.show('login-modal')
+                })
+              })
+            */
+            window.loginIds.forEach((v) => {
+                    document.getElementById(v).addEventListener("click", (v) => {
+                        this.tabIndex = 1
+                        this.$bvModal.show('login-modal')
+                    })
+                })
+                //check open modal-login
+            if (window.location.pathname.includes('login')) {
+                this.tabIndex = 1
+                this.$bvModal.show('login-modal')
+            }
+            if (window.location.pathname.includes('register')) {
+                this.tabIndex = 2
+                this.$bvModal.show('login-modal')
+            }
+            // Auto Login 
+            if (this.formLogin.username && this.formLogin.password) {
+                this.tabIndex = 1
+                this.$bvModal.show('login-modal')
+                this.onSubmit()
+            }
+        },
+        methods: {
+            async fetchBrandSetting() {
+                try {
+                    const {
+                        data
+                    } = await axios.get('/brands-setting/' + window.sitebrandId)
+                    return data
+                } catch (e) {
+                    return {}
+                }
+            },
+            sendOtp() {
+                this.SendotpTel = true
+                this.newOtpTel = true
+                this.showOtpTime = true
+            },
+            forgotSendotp() {
+                this.forgotnewOtpTel = true
+                    // this.forgotSendotpTel = true
+            },
+            keymonitorRegister(event1, event2, event3) {
+                let eventVal1 = document.getElementsByClassName(event1)[0];
+                let eventVal2 = document.getElementsByClassName(event2)[0];
+                let eventVal3 = document.getElementsByClassName(event3)[0];
+                if (eventVal2.value) {
+                    eventVal3 && eventVal3.focus();
+                } else {
+                    eventVal1.focus();
+                }
+                let pincode = "";
+                try {
+                    for (let i in [...new Array(4)]) {
+                        pincode += document.getElementsByClassName(`rkey${+i + 1}`)[0].value;
+                    }
+                    console.log('rpincode: ', pincode)
+                    this.pincode = pincode
+                    this.formRegister.pincode = pincode.trim();
+                } catch (e) {}
+
+            },
+            SignInStepNext() {
+                this.signInStep++
+            },
+            SignInStepBack() {
+                this.signInStep--
+            },
+            onModalTermsCondition() {
+                document.getElementsByClassName('modal-TermsCondition')[0].style.display = 'block'
+                    // show-TermsCondition
+            },
+            onModalTermsConditionHiden() {
+                document.getElementsByClassName('modal-TermsCondition')[0].style.display = 'none'
+                    // show-TermsCondition
+            },
+            onStatusSign() {
+                this.formRegister.name_title === 'F' || this.formRegister.name_title === 'M' ? this.CheckformRegister.name_title = true : this.CheckformRegister.name_title = false
+                this.formRegister.fname.length > 3 ? this.CheckformRegister.fname = true : this.CheckformRegister.fname = false
+                this.formRegister.lname.length > 3 ? this.CheckformRegister.lname = true : this.CheckformRegister.lname = false
+                this.formRegister.type_bank_id != null ? this.CheckformRegister.type_bank_id = true : this.CheckformRegister.type_bank_id = false
+                this.formRegister.bank_account.length > 9 ? this.CheckformRegister.bank_account = true : this.CheckformRegister.bank_account = false
+                this.StatusSign = true;
+            },
+
+            // END New Methods
+
+            onSubmit() {
+                if (!this.formLogin.username || !this.formLogin.password) {
+                    return this.alertError("กรุณากรอกข้อมูลให้ครบถ้วน");
+                }
+                // check migrate data
+                /*let is_upgrate = await this.onMigrateData(this.formLogin.username,this.formLogin.password)
+                if(is_upgrate){
+                  return false
+                  }*/
+                this.spin = true;
+                let api = "/players-auth",
+                    payload = {};
+                if (
+                    /^([0-9])+$/.test(this.formLogin.username) &&
+                    /^(06|08|09)+/.test(this.formLogin.username)
+                    // &&
+                    // /^(d{10})$/.test(this.formLogin.username)
+                ) {
+                    payload = {
+                        username: this.formLogin.username,
+                        password: this.formLogin.password,
+                        brands_id: window.sitebrandId,
+                    };
+                    api = "/players-auth";
+                } else {
+                    payload = {
+                        brands_id: window.sitebrandId,
+                        account_api: this.formLogin.username,
+                        password: this.formLogin.password
+                    };
+                    api = "/account-api-auth";
+                }
+                axios.post(api, payload).then(({
+                        data
+                    }) => {
+                        console.log('data: ', data)
+                        this.setAxiosToken(data.accessToken)
+                        this.getPlayerInfo()
+                            .then((res) => {
+                                const playerGame = res.player_games[0];
+                                if (playerGame) {
+                                    this.validation = true;
+                                    const whiteLabelURL = playerGame.agent_data.link_game;
+                                    this.checkAffiliateRefer();
+                                    if (playerGame.game_name === 'Mozart') {
+                                        if (whiteLabelURL) {
+                                            window.location = `${whiteLabelURL}?username=${playerGame.account_api}&password=${playerGame.password}&d=${Date.now()}`;
+                                        } else {
+                                            localStorage.clear()
+                                            this.alertError(
+                                                "กรุณาตั้งค่าลิ้งค์ White Label ติดต่อแอดมิน"
+                                            );
+                                        }
+                                    } else {
+                                        window.location = `${whiteLabelURL}?username=${playerGame.account_api}&password=${playerGame.password}&d=${Date.now()}`;
+                                    }
+                                } else {
+                                    localStorage.clear()
+                                    this.alertError("ไม่พบ Account Game ติดต่อแอดมิน");
+                                }
+                            })
+                            .catch(({
+                                response
+                            }) => {
+                                console.error("getPlayerInfo error: ", response);
+                                this.alertError(response.data.message);
+                            });
+                    })
+                    .catch(({
+                        response
+                    }) => {
+                        if (response.status == 401) {
+                            this.alertError("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
+                        } else {
+                            this.alertError(response.data.message);
+                        }
+                    })
+                    .finally(() => setTimeout(() => (this.spin = false), 1500));
+            },
+            getPlayerInfo() {
+                return new Promise((resolve, reject) => {
+                    axios
+                        .get("/players")
+                        .then(({
+                            data
+                        }) => resolve(data))
+                        .catch(({
+                            error
+                        }) => reject(error));
+                });
+            },
+            checkAffiliateRefer() {
+                return new Promise((resolve, reject) => {
+                    axios
+                        .patch("/players-affiliate-refer", {}, {
+                            headers: {
+                                'x-exp-signature': this.$store.state.brandId,
+                            },
+                        })
+                        .then(({
+                            data
+                        }) => resolve(data))
+                        .catch((err) => reject(err));
+                });
+            },
+            startTimer(otpTime) {
+                this.countDownOtp =
+                    otpTime ||
+                    this.brandSetting.setting.otp_time ||
+                    this.otpTimeSecDefault;
+                let minutes, seconds;
+                intervalCountDown = setInterval(() => {
+                    minutes = parseInt(this.countDownOtp / 60, 10);
+                    seconds = parseInt(this.countDownOtp % 60, 10);
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+                    this.countDownText = minutes + ":" + seconds;
+                    if (--this.countDownOtp < 0) {
+                        this.resetTimer();
+                    }
+                }, 1000);
+            },
+            resetTimer() {
+                this.countDownOtp = 0;
+                this.countDownText = "";
+                clearInterval(intervalCountDown);
+            },
+            openForgotInputOTP() {
+                this.forgotShowOtpTime = true
+                this.forgotnewOtpTel = true
+                this.forgotPasswordSpin = true;
+                this.resetTimer()
+            },
+            onSendOTP({
+                nextStep = true
+            } = {}) {
+                this.forgotPasswordSpin = true
+                axios
+                    .post("/forgot-password-otp", {
+                        brands_id: this.brandId,
+                        tel: this.forgotPasswordForm.phoneNumber
+                    })
+                    .then((res) => {
+                        this.alertSuccess("ส่ง OTP สำเร็จ");
+                        this.openForgotInputOTP()
+                        this.startTimer();
+                    })
+                    .catch(({
+                        response
+                    }) => {
+                        if (response.data.errors.code == 406) {
+                            this.alertSuccess("หมายเลขนี้ได้รับ OTP แล้ว");
+                            this.openForgotInputOTP()
+                            this.startTimer(response.data.errors.data.timeleft);
+                        } else {
+                            this.alertError(response.data.message);
+                        }
+                    })
+                    .finally(() => {
+                        this.forgotPasswordSpin = false;
+                    });
+            },
+            onCheckOTP() {
+                this.forgotPasswordSpin = true;
+                axios
+                    .post("/check-otp-forgot-password", {
+                        brands_id: this.brandId,
+                        tel: this.forgotPasswordForm.phoneNumber,
+                        otp: this.forgotPasswordForm.otp
+                    })
+                    .then((res) => {
+                        this.resetTimer()
+                        this.alertSuccess("OTP ถูกต้อง");
+                    })
+                    .catch(({
+                        response
+                    }) => {
+                        console.log("request-otp: ", response);
+                        if (response.status == 400) {
+                            if (response.data.message === "otp_is_expired") {
+                                return this.showToastError("OTP หมดอายุแล้ว");
+                            }
+                            this.alertError("OTP ไม่ถูกต้อง");
+                        } else {
+                            this.alertError(response.data.message);
+                        }
+                    })
+                    .finally(() => (this.forgotPasswordSpin = false));
+            },
+            getOtpAgain() {
+                this.onSendOTP({
+                    nextStep: false
+                });
+            },
+            onChangeNewPincode() {
+                this.spin = true;
+                axios
+                    .post("/confirm-change-pincode", {
+                        brands_id: this.brandId,
+                        tel: this.forgotPasswordForm.phoneNumber,
+                        otp: this.forgotPasswordForm.otp,
+                        pincode: this.forgotPasswordForm.pincode
+                    })
+                    .then((res) => {
+                        this.alertSuccess("อัพเดท PIN ใหม่สำเร็จ");
+                        setTimeout(() => {
+                            this.forgotmodal = false;
+                            this.tabIndex = 1;
+                        }, 1000);
+                        this.resetForgotForm();
+                    })
+                    .catch(({
+                        response
+                    }) => {
+                        console.error("request-otp: ", response);
+                        if (response.data.message === "otp_is_expired") {
+                            this.alertError("OTP หมดอายุแล้ว กรุณาทำรายการใหม่");
+                        } else {
+                            this.alertError(response.data.message);
+                        }
+                    })
+                    .finally(() => (this.spin = false));
+            },
+            keymonitor(event1, event2, event3) {
+                var eventVal1 = document.getElementsByClassName(event1)[0];
+                var eventVal2 = document.getElementsByClassName(event2)[0];
+                var eventVal3 = document.getElementsByClassName(event3)[0];
+
+                if (eventVal2.value.length === 1) {
+                    eventVal3.focus();
+                } else if (eventVal2.value.length === 0) {
+                    eventVal1.focus();
+                }
+                let pincode = "";
+                for (let i in [...new Array(4)]) {
+                    pincode += document.getElementsByClassName(`fkey${+i + 1}`)[0].value;
+                    console.log("fpincode: ", pincode);
+                }
+                this.forgotPasswordForm.pincode = pincode.trim();
+            },
+            showModal(val) {
+                this.$bvModal.show(val);
+            },
+            hideModal(val) {
+                this.$bvModal.hide(val);
+            },
+            onClickLang() {
+                document.getElementsByClassName("Select-Lang")[0].style.display =
+                    "flex";
+            },
+            onSelectLang(val) {
+                this.lang = val;
+                document.getElementsByClassName("Select-Lang")[0].style.display =
+                    "none";
+            },
+            showError(msg) {
+                this.validation = false;
+                this.alertDialog.text = msg;
+            },
+            alertError(msg, autoClose = true) {
+                this.$bvModal.show("exp-notification-modal");
+                this.isSuccess = false;
+                this.alertDialog.text = msg;
+                this.alertDialog.autoClose = autoClose;
+                autoClose && setTimeout(() => {
+                    this.$bvModal.hide("exp-notification-modal");
+                }, 2000);
+            },
+            alertSuccess(msg) {
+                this.alertDialog.autoClose = true;
+                this.$bvModal.show("exp-notification-modal");
+                this.isSuccess = true;
+                this.alertDialog.text = msg;
+                setTimeout(() => {
+                    this.$bvModal.hide("exp-notification-modal");
+                }, 2000);
+            },
+            onnotification(val) {
+                this.$bvModal.show("exp-notification-modal");
+            },
+            onCancelRegister() {
+                this.$bvModal.hide('login-modal')
+                this.resetRegisterForm()
+            },
+            resetRegisterForm() {
+                this.signInStep = 1
+                this.SendotpTel = false
+                this.newOtpTel = false
+                this.CheckOtpTel = null
+                this.StatusSign = false
+                this.otpVerified = false
+                this.isSuccess = false
+
+                this.formRegister.tel = ""
+                this.formRegister.type_bank_id = null
+                this.formRegister.bank_account = ""
+                this.formRegister.pincode = ""
+                this.formRegister.name_title = ""
+                this.formRegister.fname = ""
+                this.formRegister.lname = ""
+                this.formRegister.refer_code = ""
+                this.formRegister.otp = ""
+                this.formRegister.line_id = ""
+                this.pincode = ""
+                this.acceptPromotion = null
+                this.acceptTermsCondition = false
+
+                this.resetTimer()
+            },
+            resetForm() {
+                this.formLogin.username = "";
+                this.formLogin.password = "";
+                this.validation = null;
+            },
+            resetForgotForm() {
+                this.forgotPasswordForm.phoneNumber = "";
+                this.forgotPasswordForm.otp = "";
+                this.forgotPasswordForm.pincode = "";
+            },
+            onHidden() {
+                // Return focus to the button once hidden
+                this.$refs.button.focus();
+            },
+            async getBankList() {
+                const data = await axios
+                    .get("/banks?$limit=50&$sort[popular]=1")
+                    .then(({
+                        data
+                    }) => {
+                        this.bankTypeList = data.data.map((v) => ({
+                            value: v._id,
+                            text: v.name
+                        }));
+                    })
+                    .catch(() =>
+                        this.showError(
+                            "ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้ขณะนี้ กรุณาลองใหม่"
+                        )
+                    );
+            },
+            startTimer(otpTime) {
+                this.resetTimer()
+                this.countDownOtp =
+                    otpTime ||
+                    this.brandSetting.setting.otp_time ||
+                    this.otpTimeSecDefault;
+                let minutes, seconds;
+                intervalCountDown = setInterval(() => {
+                    minutes = parseInt(this.countDownOtp / 60, 10);
+                    seconds = parseInt(this.countDownOtp % 60, 10);
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+                    this.countDownText = minutes + ":" + seconds;
+                    if (--this.countDownOtp < 0) {
+                        this.resetTimer();
+                    }
+                }, 1000);
+            },
+            async onRequestOTP() {
+                // -------Check Condition------
+                if (!this.formRegister.tel) {
+                    return this.alertError("กรุณากรอกเบอร์โทร");
+                }
+                if (this.formRegister.tel.length !== 10) {
+                    return this.alertError("กรุณากรอกเบอร์โทร 10 หลัก");
+                }
+                if (!/(^06|08|09)+/.test(this.formRegister.tel) ||
+                    !/(^[0-9]+$)/.test(this.formRegister.tel)
+                ) {
+                    return this.alertError("รูปแบบเบอร์โทรไม่ถูกต้อง กรุณาลองใหม่");
+                }
+
+                this.spin = true;
+                const data = await axios
+                    .get(`/check-data-player?brands_id=${window.sitebrandId}&detail.tel=${this.formRegister.tel}`)
+                    .then(({
+                        data
+                    }) => {
+                        this.requestOTP();
+                    })
+                    .catch(({
+                        response
+                    }) => {
+                        if (response.data.message === "not_ready") {
+                            this.alertError("เบอร์โทรนี้มีในระบบแล้ว");
+                        } else {
+                            this.alertError(response.data.message);
+                        }
+                    })
+                    .finally(() => (this.spin = false));
+            },
+            openInputOTP() {
+                this.CheckOtpTel = null
+                this.formRegister.otp = "";
+                this.SendotpTel = true
+                this.newOtpTel = true
+                this.showOtpTime = true
+            },
+            closeInputOTP() {
+                this.SendotpTel = false
+                this.newOtpTel = false
+                this.showOtpTime = false
+            },
+            async requestOTP() {
+                const data = await axios
+                    .post("/register-otp", {
+                        brands_id: window.sitebrandId,
+                        tel: this.formRegister.tel
+                    })
+                    .then(({
+                        data
+                    }) => {
+                        console.log('register otp ');
+                        this.openInputOTP()
+                        this.startTimer();
+                        this.alertSuccess("ส่ง OTP สำเร็จ");
+                        this.formRegister.otp = "";
+                    })
+                    .catch(({
+                        response
+                    }) => {
+                        if (response.data.errors.code == 406) {
+                            this.openInputOTP()
+                            this.alertSuccess("หมายเลขนี้ได้รับ OTP แล้ว");
+                            this.startTimer(response.data.errors.data.timeleft);
+                        } else {
+                            this.alertError(response.data.message);
+                        }
+                    })
+                    .finally(() => (this.spin = false));
+            },
+            apcceptOtp() {
+                const data = axios
+                    .post("/check-otp", {
+                        brands_id: window.sitebrandId,
+                        agent_register: this.settingItem.agent_register,
+                        tel: this.formRegister.tel,
+                        otp: this.formRegister.otp
+                    })
+                    .then(({
+                        data
+                    }) => {
+                        this.CheckOtpTel = true;
+                        this.showOtpTime = false;
+                        this.resetTimer()
+                        this.otpVerified = true
+                    })
+                    .catch(({
+                        response
+                    }) => {
+                        console.error("check-otp error: ", response);
+                        if (response.status === 400) {
+                            if (response.data.errors.code === "407") {
+                                this.alertError("OTP หมดอายุ กรุณากดรับ OTP ใหม่");
+                            } else {
+                                this.alertError("OTP ไม่ถูกต้อง");
+                                this.CheckOtpTel = false;
+                            }
+                        } else {
+                            this.alertError(response.data.message);
+                        }
+                    });
+            },
+            checkForgotPasswordOtp() {
+                const data = axios
+                    .post("/check-otp-forgot-password", {
+                        brands_id: window.sitebrandId,
+                        tel: this.forgotPasswordForm.phoneNumber,
+                        otp: this.forgotPasswordForm.otp
+                    })
+                    .then(({
+                        data
+                    }) => {
+                        this.forgotOtpState = true
+                        this.CheckOtpTelforgot = true;
+                        this.$refs.tel.readOnly = true;
+                        this.$refs.otp.readOnly = true;
+                    })
+                    .catch(({
+                        response
+                    }) => {
+                        if (response.code === 400) {
+                            if (response.data.errors.code === "407") {
+                                this.alertError("OTP หมดอายุ กรุณากดรับ OTP ใหม่");
+                            } else {
+                                this.alertError("OTP ไม่ถูกต้อง");
+                                this.CheckOtpTelforgot = false;
+                            }
+                        } else {
+                            this.alertError(response.data.message);
+                        }
+                    });
+            },
+            async checkformRegister() {
+                // check all info
+                if (
+                    this.formRegister.name_title === '' ||
+                    this.formRegister.fname == "" ||
+                    this.formRegister.lname == "" ||
+                    this.formRegister.bank_id == "" ||
+                    this.formRegister.bank_account == ""
+                ) {
+                    return this.alertError("กรุณากรอกข้อมูลให้ครบถ้วน");
+                }
+
+                // check bank_account
+                if (this.formRegister.bank_account.length < 10) {
+                    return this.alertError("เลขบัญชีไม่ถูกต้อง");
+                }
+                this.spin = true;
+
+                // Check name duplicate
+                try {
+                    await axios.get(
+                        `/check-data-player?brands_id=${window.sitebrandId}&detail.fname=${this.formRegister.fname}&detail.lname=${this.formRegister.lname}`
+                    );
+                } catch ({
+                    response
+                }) {
+                    this.spin = false;
+                    console.error("check name error: ", response);
+                    return this.alertError("ชื่อนี้มีในระบบแล้ว");
+                }
+
+                // Check bank duplicate
+                try {
+                    await axios.get(
+                        `/check-data-player?brands_id=${window.sitebrandId}&player_bank.type_bank_id=${this.formRegister.type_bank_id}&player_bank.bank_account=${this.formRegister.bank_account}`
+                    );
+                } catch ({
+                    response
+                }) {
+                    this.spin = false;
+                    console.error("check bank error: ", response);
+                    return this.alertError("เลขบัญชีนี้มีในระบบแล้ว");
+                }
+
+                // Check Refer_code
+                if (
+                    this.formRegister.refer_code &&
+                    this.formRegister.refer_code.length !== 10
+                ) {
+                    this.spin = false;
+                    return this.alertError("รหัสชวนเพื่อนไม่ถูกต้อง");
+                }
+
+                if (this.acceptPromotion === null) {
+                    this.spin = false;
+                    return this.alertError("กรุณาเลือกสถานะรับโปรโมชั่น");
+                }
+
+                this.spin = false;
+                this.onSubmitRegister()
+            },
+            async onSubmitRegister() {
+                this.spin = true;
+                const data = {
+                    brands_id: window.sitebrandId,
+                    username: this.formRegister.tel,
+                    password: this.defaultPassword,
+                    pincode: this.formRegister.pincode,
+                    detail: {
+                        fname: this.formRegister.fname.trimStart().trimEnd(),
+                        lname: this.formRegister.lname.trimStart().trimEnd(),
+                        tel: this.formRegister.tel,
+                        birth_date: "1990-01-01",
+                        line_id: this.$refs.inputIdLine.value
+                    },
+                    player_bank: {
+                        type_bank_id: this.formRegister.type_bank_id,
+                        bank_account: this.formRegister.bank_account
+                    }
+                };
+                if (this.formRegister.refer_code)
+                    data.refer_code_by = this.formRegister.refer_code;
+                this.register(data)
+                    .then(({
+                        data
+                    }) => {
+                        this.checkAffiliateRefer();
+                        this.signInStep = 5;
+                        this.StatusSign = true;
+                        const player_game =
+                            data.player_games &&
+                            data.player_games.length > 0 &&
+                            data.player_games[0];
+                        if (player_game) {
+                            setTimeout(() => {
+                                this.$refs.accountApi.value = player_game.account_api;
+                                this.$refs.password.value = player_game.password;
+                                this.$refs.pincode.value = this.formRegister.pincode;
+                            }, 500)
+                        }
+
+                    })
+                    .catch((err) => {
+                        console.log("err: ", err);
+                        let response = err.response;
+                        // TODO
+                        let errMsg = "";
+                        if (
+                            response.data.message === "ดำเนินการล้มเหลว" ||
+                            response.data.message === "Operation Fails"
+                        ) {
+                            errMsg = response.data.errors.debugs;
+                        } else {
+                            errMsg = response.data.message;
+                        }
+                        this.alertError(errMsg, false);
+                    })
+                    .finally(() => {
+                        this.spin = false;
+                    });
+            },
+            register: async function(body) {
+                return new Promise(async(resolve, reject) => {
+                    // Create Player
+                    try {
+                        await axios.post("/players", body);
+                    } catch (error) {
+                        console.error(" Create Player: ", error);
+                        return reject(error);
+                    }
+
+                    // Auth
+                    let user;
+                    try {
+                        const res = await axios.post("/players-auth", {
+                            brands_id: window.sitebrandId,
+                            username: this.formRegister.tel,
+                            password: this.formRegister.pincode
+                        });
+                        user = res.data;
+                        this.setAxiosToken(user.accessToken)
+                    } catch (error) {
+                        console.error("players-auth error: ", error);
+                        return reject(error);
+                    }
+
+                    // Create Player Game
+                    try {
+                        // this.settingItem.player_bonus_status
+                        let player = await axios.put("/players-game", {
+                            agents_id: this.settingItem.agent_register,
+                            password: this.defaultPassword,
+                            player_pro_status: +this.acceptPromotion,
+                        }, {
+                            headers: {
+                                Authorization: 'Bearer ' + user.accessToken
+                            }
+                        });
+                        resolve(player);
+                    } catch (error) {
+                        console.error("Create Player Game: ", error);
+                        reject(error);
+                    }
+                });
+            },
+            onLogin() {
+                this.spin = true;
+                axios
+                    .post("/players-auth", {
+                        brands_id: window.sitebrandId,
+                        username: this.formRegister.tel,
+                        password: this.formRegister.pincode
+                    })
+                    .then(({
+                        data
+                    }) => {
+                        this.getPlayerInfo()
+                            .then((res) => {
+                                const playerGame = res.player_games[0];
+                                if (playerGame) {
+                                    const whiteLabelURL = playerGame.agent_data.link_game;
+                                    if (whiteLabelURL) {
+                                        this.validation = true;
+                                        window.location = `${whiteLabelURL}?username=${playerGame.account_api}&password=${playerGame.password}`;
+                                    } else {
+                                        this.alertError(
+                                            "กรุณาตั้งค่าลิ้งค์ White Label ติดต่อแอดมิน"
+                                        );
+                                    }
+                                }
+                            })
+                            .catch(({
+                                response
+                            }) => {
+                                console.error("getPlayerInfo error: ", response);
+                                this.alertError(response.data.message);
+                            });
+                    })
+                    .catch(({
+                        response
+                    }) => {
+                        if (response.status == 401) {
+                            this.alertError("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
+                        } else {
+                            this.alertError(response.data.message);
+                        }
+                    })
+                    .finally(() => (this.spin = false));
+            },
+            getPlayerInfo() {
+                return new Promise((resolve, reject) => {
+                    axios
+                        .get("/players")
+                        .then(({
+                            data
+                        }) => resolve(data))
+                        .catch(({
+                            error
+                        }) => reject(error));
+                });
+            },
+            copyClipboard: function(target) {
+                this.$refs[target].select();
+                document.execCommand("copy");
+                this.alertSuccess("คัดลอกลงคลิปบอร์ดแล้ว");
+            },
+            checkMobile() {
+                const toMatch = [
+                    /Android/i,
+                    /webOS/i,
+                    /iPhone/i,
+                    /iPad/i,
+                    /iPod/i,
+                    /BlackBerry/i,
+                    /Windows Phone/i
+                ];
+                const isMobile = toMatch.some((toMatchItem) => navigator.userAgent.match(toMatchItem));
+                console.log('isMobile: ', isMobile)
+                return isMobile
+            },
+            setAxiosToken(token) {
+                axios.interceptors.request.use(function(config) {
+                    config.headers['Authorization'] = `Bearer ${token}`
+                    return config;
+                }, function(error) {
+                    // Do something with request error
+                    return Promise.reject(error);
+                });
+            }
+        }
+    });
+</script>
